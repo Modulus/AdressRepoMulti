@@ -1,5 +1,6 @@
 include:
   - python
+  - python.docker
 
 docker.dependencies:
   pkg.installed:
@@ -33,7 +34,7 @@ docker.installed:
   pkg.installed:
     - pkgs:
       - docker-engine
-    - version: 1.10.0-0~trusty  
+    - version: 1.10.0-0~trusty
     - require:
       - pkg: docker.dependencies
       - pkg: docker.purge.lxc-docker

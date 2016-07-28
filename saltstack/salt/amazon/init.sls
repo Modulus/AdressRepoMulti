@@ -7,7 +7,9 @@ web security group present:
   boto_secgroup.present:
     - name: demo-web
     - description: security group for web servers
-    - profile: ec2
+    - profile: aws
+    - require:
+      - pip: boto
     - rules:
       - ip_protocol: tcp
         from_port: 80
@@ -15,11 +17,14 @@ web security group present:
         cidr_ip:
           - 0.0.0.0/0
 
+
 master security group present:
   boto_secgroup.present:
     - name: demo-master
     - description: security group for web servers
-    - profile: ec2
+    - profile: aws
+    - require:
+      - pip: boto
     - rules:
       - ip_protocol: tcp
         from_port: 4505
@@ -35,7 +40,9 @@ minion security group present:
   boto_secgroup.present:
     - name: demo-minion
     - description: security group for web servers
-    - profile: ec2
+    - profile: aws
+    - require:
+      - pip: boto
     - rules:
       - ip_protocol: tcp
         from_port: 4505
