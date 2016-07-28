@@ -5,15 +5,18 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.provider "virtualbox" do |vb|
-      vb.memory = 1024
-  end
+
   config.vm.define :master do |master_config|
     master_config.vm.box = "ubuntu/trusty64"
-    master_config.vm.host_name = 'saltmaster.local'
     master_config.vm.network "private_network", ip: "192.168.50.10"
     master_config.vm.synced_folder "saltstack/salt/", "/srv/salt"
     master_config.vm.synced_folder "saltstack/pillar/", "/srv/pillar"
+    master_config.landrush.enabled = true
+    master_config.landrush.tld = "master"
+    master_config.vm.hostname = "master"
+  #  master_config.vm.provider "virtualbox" do |vb|
+  #      vb.memory = 1024
+  #  end
 
     master_config.vm.provision :salt do |salt|
       salt.master_config = "saltstack/etc/master"
@@ -37,8 +40,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :minion1 do |minion_config|
     minion_config.vm.box = "ubuntu/trusty64"
-    minion_config.vm.host_name = 'saltminion1.local'
     minion_config.vm.network "private_network", ip: "192.168.50.11"
+    minion_config.landrush.enabled = true
+    minion_config.landrush.tld = "minion1"
+    minion_config.vm.hostname = "minion1"
 
     minion_config.vm.provision :salt do |salt|
       salt.minion_config = "saltstack/etc/minion1"
@@ -57,7 +62,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # instead of Ubuntu.
     # Comment out the above line as well
     #minion_config.vm.box = "bento/centos-7.2"
-    minion_config.vm.host_name = 'saltminion2.local'
+    minion_config.landrush.enabled = true
+    minion_config.landrush.tld = "minion2"
+    minion_config.vm.hostname = "minion2"
+
     minion_config.vm.network "private_network", ip: "192.168.50.12"
 
     minion_config.vm.provision :salt do |salt|
