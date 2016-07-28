@@ -1,0 +1,11 @@
+ec2_ubuntu_small-ec2-eu-west-1a:
+  - web1:
+      grains:
+        roles:
+          - web
+          - minion
+  - elastic1:
+      grains:
+        roles:
+          - elasticsearch
+          - db
