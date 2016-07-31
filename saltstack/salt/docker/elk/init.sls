@@ -21,8 +21,11 @@ docker run kibana:
   dockerng.running:
     - image: kibana
     - name: kibana
+    - port_bindings:
+      - "5601:5601"
     - links:
       - elasticsearch:elasticsearch
     - require:
       - dockerng: kibana image present
       - dockerng: elasticsearch image present
+      - dockerng: docker run elasticsearch

@@ -1,3 +1,8 @@
+#Event config custom
+event_return: elasticsearch
+ext_job_cache: elasticsearch
+
+
 ##### Primary configuration settings #####
 ##########################################
 # This configuration file is used to manage the behavior of the Salt Master.

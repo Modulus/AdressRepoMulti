@@ -14,9 +14,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     master_config.landrush.enabled = true
     master_config.landrush.tld = "master"
     master_config.vm.hostname = "master"
-  #  master_config.vm.provider "virtualbox" do |vb|
-  #      vb.memory = 1024
-  #  end
+    master_config.vm.provider "virtualbox" do |vb|
+        vb.memory = 1024
+    end
 
     master_config.vm.provision :salt do |salt|
       salt.master_config = "saltstack/etc/master"
@@ -46,6 +46,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     minion_config.landrush.enabled = true
     minion_config.landrush.tld = "minion1"
     minion_config.vm.hostname = "minion1"
+    #Kibana port
+    minion_config.vm.network "forwarded_port", guest: 5601, host: 5601, auto_correct: true
+    minion_config.vm.network "forwarded_port", guest: 9200, host: 9200, auto_correct: true
+
+    minion_config.vm.provider "virtualbox" do |vb|
+        vb.memory = 1024
+    end
 
     minion_config.vm.provision :salt do |salt|
       salt.minion_config = "saltstack/etc/minion1"
@@ -67,6 +74,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     minion_config.landrush.enabled = true
     minion_config.landrush.tld = "minion2"
     minion_config.vm.hostname = "minion2"
+    minion_config.vm.provider "virtualbox" do |vb|
+        vb.memory = 1024
+    end
 
     minion_config.vm.network "private_network", ip: "192.168.50.12"
 

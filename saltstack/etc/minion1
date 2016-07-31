@@ -1,3 +1,4 @@
+#event_return: elasticsearch
 ##### Primary configuration settings #####
 ##########################################
 # This configuration file is used to manage the behavior of the Salt Minion.

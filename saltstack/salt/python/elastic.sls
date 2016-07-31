@@ -1,3 +1,3 @@
-elasticsearch-py:
+elasticsearch:
   pip.installed:
-    - unless: pip freeze | grep 	elasticsearch-py
+    - unless: pip freeze | grep elasticsearch

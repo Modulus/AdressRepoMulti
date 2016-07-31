@@ -1,3 +1,4 @@
+#event_return: elasticsearch
 ##### Primary configuration settings #####
 ##########################################
 # This configuration file is used to manage the behavior of the Salt Minion.
@@ -67,7 +68,7 @@ id: minion2
 grains:
   roles:
     - web
-    - 
+    -
 #  deployment: datacenter4
 #  cabinet: 13
 #  cab_u: 14-15

@@ -1,6 +1,8 @@
 base:
   "*":
     - docker
+    - python
+    - python.elastic
   "roles:db":
-    - docker.elk
     - match: grain
+    - docker.elk
