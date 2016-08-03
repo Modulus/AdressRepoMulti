@@ -7,3 +7,6 @@ base:
     - mongodb
     - python.mongodb
     - mongodb.import
+  "G@roles:api":
+    - match: compount
+    - tools.node
