@@ -1,0 +1,2 @@
+pymongo:
+  pip.installed

@@ -1,6 +1,6 @@
 #Event config custom
-event_return: elasticsearch
-ext_job_cache: elasticsearch
+#event_return: elasticsearch
+#ext_job_cache: elasticsearch
 
 
 ##### Primary configuration settings #####
