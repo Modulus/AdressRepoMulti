@@ -50,3 +50,11 @@ run nodeapp docker container:
     - restart_policy: onfailure:5
     - require:
       - dockerng: build nodeapp docker image
+    {% for server, addrs in salt["mine.get"]("roles:db", "network.ip_addrs", expr_form="grain").items() %}
+    - extra_hosts:
+      {% if server == "minion1" %}
+      - db:{{addrs[0]}}
+      {% else %}
+      - {{server}}:{{addrs[0]}}
+      {% endif %}
+    {% endfor %}

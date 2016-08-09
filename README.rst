@@ -32,3 +32,6 @@ using Salt.
 
     vagrant ssh master
     sudo salt \* test.ping
+
+#REST api:
+localhost:3000/api

@@ -74,6 +74,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     minion_config.landrush.enabled = true
     minion_config.landrush.tld = "minion2"
     minion_config.vm.hostname = "minion2"
+    minion_config.vm.network "forwarded_port", guest: 3000, host: 3000, auto_correct: true
+
     minion_config.vm.provider "virtualbox" do |vb|
         vb.memory = 1024
     end

@@ -1,6 +1,5 @@
-0base:
+base:
   "*":
-    - docker
     - amazon
     - mine
   "minion*":
