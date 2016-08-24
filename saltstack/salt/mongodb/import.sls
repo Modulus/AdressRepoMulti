@@ -1,10 +1,14 @@
 include:
   - geo_files
-  - sync
+
+saltutil.sync_all:
+  module.run:
+    - name: saltutil.sync_all
+
 
 import data:
   module.run:
     - name: mongo.import_data
     - require:
-      - module: sync_all
-      - archive: geonames unzipped
+      - module: saltutil.sync_all
+      - archive: geonames extracted

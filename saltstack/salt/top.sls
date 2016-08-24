@@ -1,7 +1,4 @@
 base:
-  "*":
-    - docker
-    - python
   "roles:db":
     - match: grain
     - mongodb

@@ -1,2 +1,0 @@
-popen:
-  pip.installed

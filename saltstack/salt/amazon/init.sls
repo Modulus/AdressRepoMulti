@@ -31,24 +31,9 @@ master security group present:
         to_port: 22
         source_group_name: demo-minion
       - ip_protocol: tcp
-        from_port: 22
-        to_port: 22
-        source_group_name: demo-master
-      - ip_protocol: tcp
         from_port: 4505
         to_port: 4506
         source_group_name: demo-minion
-      - ip_protocol: tcp
-        from_port: 4505
-        to_port: 4506
-        source_group_name: demo-master
-    #  - ip_protocol: tcp
-    #    from_port: 22
-    #    to_port: 22
-    #    cidr_ip:
-    #      - 123.123.123.20/32
-
-
 
 
 minion security group present:
@@ -62,15 +47,7 @@ minion security group present:
       - ip_protocol: tcp
         from_port: 22
         to_port: 22
-        source_group_name: demo-minion
-      - ip_protocol: tcp
-        from_port: 22
-        to_port: 22
         source_group_name: demo-master
-      - ip_protocol: tcp
-        from_port: 4505
-        to_port: 4506
-        source_group_name: demo-minion
       - ip_protocol: tcp
         from_port: 4505
         to_port: 4506

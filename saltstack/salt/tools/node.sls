@@ -4,12 +4,14 @@ include:
 node.prepare:
   cmd.run:
     - name: curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+    - unless: which node
     - require:
       - pkg: curl
 
 apt-get update:
   cmd.run:
     - name: apt-get update
+    - unless: which node
     - require:
       - cmd: node.prepare
 

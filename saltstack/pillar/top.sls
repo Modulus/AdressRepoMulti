@@ -7,3 +7,6 @@ base:
   "roles:master":
     - match: grain
     - elastic
+  "G@roles:web or minion2":
+    - match: compound
+    - home
