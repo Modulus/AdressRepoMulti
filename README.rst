@@ -13,8 +13,8 @@ already be installed.
 
 .. code-block:: bash
 
-    git clone https://github.com/UtahDave/salt-vagrant-demo.git
-    cd salt-vagrant-demo
+    git clone https://github.com/Modulus/AdressRepoMulti.git
+    cd AddressRepoMulti
     vagrant up
 
 
@@ -31,7 +31,7 @@ using Salt.
 .. code-block:: bash
 
     vagrant ssh master
-    sudo salt \* test.ping
+    sudo salt "*" test.ping
 
 #REST api:
 localhost:3000/api
