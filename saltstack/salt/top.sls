@@ -4,7 +4,7 @@ base:
     - mongodb
     - python.mongodb
     - mongodb.import
-  "G@roles:api":
+  "G@roles:api not G@roles.db":
     - match: compound
     - tools.node
     - nodeapp
