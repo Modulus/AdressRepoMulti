@@ -6,7 +6,7 @@ cp -Rvu saltstack/pillar/* /srv/pillar
 
 
 cp -vu cloud.profiles.d/* /etc/salt/cloud.profiles.d/
-#cp -vu cloud.providers.d/* /etc/salt/cloud.providers.d/
+cp -vu cloud.providers.d/* /etc/salt/cloud.providers.d/
 
 
 #Copy reactor code

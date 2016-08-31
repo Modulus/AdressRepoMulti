@@ -1,3 +1,6 @@
+TODO: Fiks env variabel
+TODO: gjør om til get  i stedet for post på søk
+
 =================
 Salt Vagrant Demo
 =================
