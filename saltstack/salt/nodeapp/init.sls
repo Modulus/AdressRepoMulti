@@ -13,6 +13,8 @@ manage file nodeapp.service:
   file.managed:
     - name: /etc/init/api.conf
     - source: salt://nodeapp/api.conf
+    - require:
+      - environ: set environement to dev
 
 
 add database nodes to hosts:
