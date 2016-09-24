@@ -1,10 +1,21 @@
 # orchestration of the whole environment
-setup security groups:
+
+setup master:
   salt.state:
-    - tgt: roles:api
+    - tgt: roles:master
     - tgt_type: grain
     - sls:
-        - security_groups
+      - salt-master
+    - require_in:
+      - salt: setup security groups
+
+setup security groups:
+  salt.state:
+    - tgt: roles:master
+    - tgt_type: grain
+    - sls:
+        - security_groups_base
+        - security_groups_web
     - require_in:
       - salt: setup db minion
       - salt: setup api minion
