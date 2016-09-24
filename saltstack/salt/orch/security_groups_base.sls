@@ -29,6 +29,10 @@ ensure salt-master security groups is configured:
     - rules:
         - ip_protocol: tcp
           from_port: 4505
+          to_port: 4505
+          source_group_name: salt-minion-sg
+        - ip_protocol: tcp
+          from_port: 4506
           to_port: 4506
           source_group_name: salt-minion-sg
         - ip_protocol: tcp
@@ -51,6 +55,10 @@ ensure salt-minion security groups is configured:
     - rules:
         - ip_protocol: tcp
           from_port: 4505
+          to_port: 4505
+          source_group_name: salt-master-sg
+        - ip_protocol: tcp
+          from_port: 4506
           to_port: 4506
           source_group_name: salt-master-sg
         - ip_protocol: tcp
@@ -59,6 +67,10 @@ ensure salt-minion security groups is configured:
           source_group_name: salt-master-sg
         - ip_protocol: tcp
           from_port: 4505
+          to_port: 4505
+          source_group_name: salt-minion-sg
+        - ip_protocol: tcp
+          from_port: 4506
           to_port: 4506
           source_group_name: salt-minion-sg
     - require:
