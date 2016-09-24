@@ -7,13 +7,13 @@ ensure web security group is present:
       - key: {{pillar["aws"]["key"]}}
       - keyid: {{pillar["aws"]["keyid"]}}
       - rules:
-        - ip_protocol: tcp
-          from_port: 80
-          to_port: 80
-          cidr_ip:
-            - 0.0.0.0/0
-        - ip_protocol: tcp
-          from_port: 443
-          to_port: 443
-          cidr_ip:
-            - 0.0.0.0/0
+          - ip_protocol: tcp
+            from_port: 80
+            to_port: 80
+            cidr_ip:
+              - 0.0.0.0/0
+          - ip_protocol: tcp
+            from_port: 443
+            to_port: 443
+            cidr_ip:
+              - 0.0.0.0/0
