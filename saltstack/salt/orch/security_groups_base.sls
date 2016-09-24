@@ -31,6 +31,10 @@ ensure salt-master security groups is configured:
           from_port: 4505
           to_port: 4506
           source_group_name: salt-minion-sg
+        - ip_protocol: tcp
+          from_port: 22
+          to_port: 22
+          source_group_name: salt-minion-sg
     - require:
       - boto_secgroup: ensure salt-minion security group exists
       - boto_secgroup: ensure salt-master security group exists
@@ -48,6 +52,10 @@ ensure salt-minion security groups is configured:
         - ip_protocol: tcp
           from_port: 4505
           to_port: 4506
+          source_group_name: salt-master-sg
+        - ip_protocol: tcp
+          from_port: 22
+          to_port: 22
           source_group_name: salt-master-sg
         - ip_protocol: tcp
           from_port: 4505
