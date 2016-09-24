@@ -5,7 +5,7 @@ ec2_ubuntu_small-ec2-eu-west-1a:
         env: dev
         owner: Kaizer Soze
     securitygroup:
-      - salt-minion-sg	
+      - salt-minion-sg
   app1:
     grains:
         roles: api
@@ -13,3 +13,4 @@ ec2_ubuntu_small-ec2-eu-west-1a:
         owner: Kaizer Soze
     securitygroup:
       - salt-minion-sg
+      - web-sg
