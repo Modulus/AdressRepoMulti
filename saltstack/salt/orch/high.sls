@@ -1,4 +1,14 @@
 # orchestration of the whole environment
+setup security groups:
+  salt.state:
+    - tgt: roles:api
+    - tgt_type: grain
+    - sls:
+        - security_groups
+    - require_in:
+      - salt: setup db minion
+      - salt: setup api minion
+
 setup db minion:
   salt.state:
     - tgt: roles:db

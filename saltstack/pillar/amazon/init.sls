@@ -1,4 +1,5 @@
 aws:
     keyid: XXXXX
     key: jadklakjklsdaf
-    region: us-east-1
+    region: eu-west-1
+    zone: eu-west-1a
