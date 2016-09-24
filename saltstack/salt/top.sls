@@ -6,3 +6,6 @@ base:
   "G@roles:api not G@roles.db":
     - match: compound
     - application
+  "G@roles:master":
+    - match: compound
+    - salt-master  
