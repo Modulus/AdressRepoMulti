@@ -15,7 +15,7 @@ setup security groups:
     - tgt_type: grain
     - sls:
         - orch.security_groups_base
-        - orch.security_groups_web
+        - orch.security_groups_web_db
     - require_in:
       - salt: setup db minion
       - salt: setup api minion
