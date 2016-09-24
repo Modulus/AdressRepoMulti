@@ -1,10 +1,8 @@
+#Highstate, no orchestration
 base:
   "roles:db":
     - match: grain
-    - mongodb
-    - python.mongodb
-    - mongodb.import
+    - database
   "G@roles:api not G@roles.db":
     - match: compound
-    - tools.node
-    - nodeapp
+    - application
