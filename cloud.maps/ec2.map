@@ -1,4 +1,4 @@
-ec2_ubuntu_small-ec2-eu-west-1a:
+ec2_ubuntu_16_small-ec2-eu-west-1a:
   db1:
     grains:
         roles: db
@@ -6,6 +6,8 @@ ec2_ubuntu_small-ec2-eu-west-1a:
         owner: Kaizer Soze
     securitygroup:
       - salt-minion-sg
+      - db-sg
+ec2_ubuntu_14_small-ec2-eu-west-1a:
   app1:
     grains:
         roles: api
