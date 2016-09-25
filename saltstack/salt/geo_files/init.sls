@@ -7,7 +7,7 @@ include:
 download geodata:
   cmd.run:
       - name: curl -o codes.zip {{ url }}
-      - cwd: /home/vagrant
+      - cwd: {{pillar["home"]}}
       #- output_loglevel: quiet
       - require:
         - pkg: curl
@@ -15,14 +15,14 @@ download geodata:
 download readme:
   cmd.run:
       - name: curl -O http://download.geonames.org/export/zip/readme.txt
-      - cwd: /home/vagrant
+      - cwd: {{pillar["home"]}}
       - require:
         - pkg: curl
 
 geonames extracted:
   archive.extracted:
-    - name: /home/vagrant/countries
-    - source: /home/vagrant/codes.zip
+    - name: {{pillar["home"]}}countries
+    - source: {{pillar["home"]}}codes.zip
     - archive_format: zip
     - require:
       - cmd: download geodata

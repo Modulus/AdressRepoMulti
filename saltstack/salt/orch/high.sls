@@ -29,7 +29,7 @@ setup db minion:
 
 setup api minion:
   salt.state:
-    - tgt: G@roles:api not G@roles.db
+    - tgt: G@roles:api
     - tgt_type: compound
     - sls:
       - application
