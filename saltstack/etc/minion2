@@ -69,6 +69,7 @@ grains:
   roles:
     - "api"
     - "web"
+    - "vagrant"
 #  deployment: datacenter4
 #  cabinet: 13
 #  cab_u: 14-15
