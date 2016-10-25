@@ -10,7 +10,7 @@ setup master:
 setup security groups:
   salt.state:
     - tgt: roles:master
-    - tgt_type: compound
+    - tgt_type: grain
     - sls:
         - orch.security_groups_base
         - orch.security_groups_web_db
