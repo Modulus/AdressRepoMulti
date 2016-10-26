@@ -38,3 +38,6 @@ using Salt.
 
 #REST api:
 localhost:3000/api
+
+salt-cloud error is a know bug
+https://github.com/saltstack/salt/pull/34641
